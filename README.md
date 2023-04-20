@@ -63,8 +63,13 @@ docker-compose exec web python manage.py migrate
 docker-compose exec web python manage.py createsuperuser
 docker-compose exec web python manage.py collectstatic --no-input
 ```
+4. Заполнить базу данными:
 
-4. Открыть документацию проекта:
+```
+docker-compose exec web python manage.py loaddata fixtures.json
+```
+
+5. Открыть документацию проекта:
 
 ```
 http://127.0.0.1:8000/redoc/
